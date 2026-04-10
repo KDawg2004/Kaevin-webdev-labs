@@ -8,84 +8,86 @@
   </head>
   <body>
     <main>
-      <form action="#" method="get">
+      <form method="get">
         <h1>Roth IRA Calculator</h1>
-      <label for="balance">Balance($)</label>
-      <br>
-      <input type="text" id="balance" name="balance">
-      <br>
-      <label for="contributions">Annual Contributions(4)</label>
-      <br>
-      <input type="text" id="contributions" name="contributions">
-      <br>
-      <fieldset>
-        <legend>Maximize Contributions?</legend>
-        <label for="yes">
-          <input type="radio" id="yes" value="yes" name="maximize"> Yes
-        </label>
-        <label for="no">
-          <input type="radio" id="no" value="no" name="maximize"> No
-        </label>
-      </fieldset>
-      <br>
-      <br>
-      <label for="rate">Expected Rate of return(5)</label>
-      <br>
-      <select id="rate" name="rate">
-        <option value="">Select rate</option>
-        <option value="3">3%</option>
-        <option value="4">4%</option>
-        <option value="5">5%</option>
-        <option value="6">6%</option>
-        <option value="7">7%</option>
-        <option value="8">8%</option>
-      </select>
-      <br>
-      <br>
-      <label for="curr_age">Current Age</label>
-      <br>
-      <select id="curr_age" name="curr_age">
-        <option value="">Select age</option>
-        <option value="18">18</option>
-        <option value="25">25</option>
-        <option value="30">30</option>
-        <option value="35">35</option>
-        <option value="40">40</option>
-        <option value="45">45</option>
-        <option value="50">50</option>
-        <option value="55">55</option>
-      </select>
-      <br>
-      <br>
-      <label for="ret_age">Retirement Age</label>
-      <br>
-      <select id="ret_age" name="ret_age">
-        <option value="">Select age</option>
-        <option value="60">60</option>
-        <option value="62">62</option>
-        <option value="65">65</option>
-        <option value="67">67</option>
-        <option value="70">70</option>
-      </select>
-      <br>
-      <br>
-      <label for="tax_rate">Marginal Tax Rate(%)</label>
-      <br>
-      <select id="tax_rate" name="tax_rate">
-        <option value="">Select rate</option>
-        <option value="10">10%</option>
-        <option value="12">12%</option>
-        <option value="22">22%</option>
-        <option value="24">24%</option>
-        <option value="32">32%</option>
-        <option value="35">35%</option>
-        <option value="37">37%</option>
-      </select>
+        <label for="balance">Balance($)</label>
+        <br />
+        <input type="text" id="balance" name="balance" />
+        <br />
+        <label for="contributions">Annual Contributions(4)</label>
+        <br />
+        <input type="text" id="contributions" name="contributions" />
+        <br />
+        <br />
+        <fieldset style="border: none">
+          <!-- so no border-->
+          <legend>Maximize Contributions?</legend>
+          <label for="yes">
+            <input type="radio" id="yes" value="yes" name="maximize" /> Yes
+          </label>
+          <label for="no">
+            <input type="radio" id="no" value="no" name="maximize" /> No
+          </label>
+        </fieldset>
+        <br />
+        <br />
+        <label for="rate">Expected Rate of return(5)</label>
+        <br />
+        <select id="rate" name="rate">
+          <option value="">Select rate</option>
+          <option value="3">3%</option>
+          <option value="4">4%</option>
+          <option value="5">5%</option>
+          <option value="6">6%</option>
+          <option value="7">7%</option>
+          <option value="8">8%</option>
+        </select>
+        <br />
+        <br />
+        <label for="curr_age">Current Age</label>
+        <br />
+        <select id="curr_age" name="curr_age">
+          <option value="">Select age</option>
+          <option value="18">18</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+        </select>
+        <br />
+        <br />
+        <label for="ret_age">Retirement Age</label>
+        <br />
+        <select id="ret_age" name="ret_age">
+          <option value="">Select age</option>
+          <option value="60">60</option>
+          <option value="62">62</option>
+          <option value="65">65</option>
+          <option value="67">67</option>
+          <option value="70">70</option>
+        </select>
+        <br />
+        <br />
+        <label for="tax_rate">Marginal Tax Rate(%)</label>
+        <br />
+        <select id="tax_rate" name="tax_rate">
+          <option value="">Select rate</option>
+          <option value="10">10%</option>
+          <option value="12">12%</option>
+          <option value="22">22%</option>
+          <option value="24">24%</option>
+          <option value="32">32%</option>
+          <option value="35">35%</option>
+          <option value="37">37%</option>
+        </select>
 
-      <br>
-      <br>
-      <input type="submit" value="Submit Form">
-      <input type="reset" value="Reset Form">
+        <br />
+        <br />
+        <input type="submit" value="Submit Form" />
+        <input type="reset" value="Reset Form" />
       </form>
     </main>
   </body>
