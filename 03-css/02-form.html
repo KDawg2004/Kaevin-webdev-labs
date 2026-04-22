@@ -7,12 +7,92 @@
     <title>CSS Exercise 02 - Form</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="form-page">
     <main>
       <!-- Start with the code from the HTML folder.
       - Make sure to fix any issues in your HTML code.
       - Delete all mentions of <br>s and style the line breaks with CSS. 
       - Add classes to style the elements on the page. -->
+      <form method="get" class="form-box">
+        <h1 id="title">Roth IRA Calculator</h1>
+        <label for="balance">Balance($)</label>
+        <input type="text" id="balance" name="balance" />
+        <br />
+        <br />
+        <label for="contributions">Annual Contributions(4)</label>
+        <input type="text" id="contributions" name="contributions" />
+        <br />
+        <br />
+        <fieldset style="border: none">
+          <!-- so no border-->
+          <legend>Maximize Contributions?</legend>
+          <label for="yes">
+            <input type="radio" id="yes" value="yes" name="maximize" /> Yes
+          </label>
+          <label for="no">
+            <input type="radio" id="no" value="no" name="maximize" /> No
+          </label>
+        </fieldset>
+        <br />
+        <br />
+        <label for="rate">Expected Rate of return(5)</label>
+
+        <select id="rate" name="rate">
+          <option value="">Select rate</option>
+          <option value="3">3%</option>
+          <option value="4">4%</option>
+          <option value="5">5%</option>
+          <option value="6">6%</option>
+          <option value="7">7%</option>
+          <option value="8">8%</option>
+        </select>
+        <br />
+        <br />
+        <label for="curr_age">Current Age</label>
+
+        <select id="curr_age" name="curr_age">
+          <option value="">Select age</option>
+          <option value="18">18</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+        </select>
+        <br />
+        <br />
+        <label for="ret_age">Retirement Age</label>
+
+        <select id="ret_age" name="ret_age">
+          <option value="">Select age</option>
+          <option value="60">60</option>
+          <option value="62">62</option>
+          <option value="65">65</option>
+          <option value="67">67</option>
+          <option value="70">70</option>
+        </select>
+        <br />
+        <br />
+        <label for="tax_rate">Marginal Tax Rate(%)</label>
+
+        <select id="tax_rate" name="tax_rate">
+          <option value="">Select rate</option>
+          <option value="10">10%</option>
+          <option value="12">12%</option>
+          <option value="22">22%</option>
+          <option value="24">24%</option>
+          <option value="32">32%</option>
+          <option value="35">35%</option>
+          <option value="37">37%</option>
+        </select>
+
+        <br />
+        <br />
+        <input type="submit" value="Calculate" class="btn-submit" />
+        <input type="reset" value="Reset Form" class="btn-reset" />
+      </form>
     </main>
   </body>
 </html>
