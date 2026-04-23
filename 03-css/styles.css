@@ -12,7 +12,9 @@
   --dark-slate-infinity: #1f2a33;
   --midnight-blue: #161678;
 }
+
 /*----------- FORM CSS -----------*/
+
 /* Form title- # because its an ID not class(unique)*/
 #title {
   color: var(--midnight-blue);
@@ -23,7 +25,7 @@
   background-color: var(--midnight-blue);
 }
 
-/* Make the box white, give it rounded corners, and add padding for content*/
+/* Make the box white, give it rounded corners, and add padding for content not touching the edges */
 .form-box {
   background-color: white;
   border-radius: 1rem;
@@ -116,7 +118,7 @@
   text-decoration: underline;
 }
 
-/* Main title styles */
+/* Main title styles*/
 .main-title {
   color: var(--gothic-gray-blue);
   text-align: center;
