@@ -5,9 +5,18 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  background-color: #fff;
 }
 
 /* Exercise 01 - Center */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .box {
   width: 200px;
   height: 100px;
@@ -22,7 +31,7 @@ h1 {
   text-align: center;
 }
 
-/* Common styles for Flexbox and CSS Grid */
+/*Common styles for flexbox and grid*/
 .flex-item,
 .grid-item {
   padding: 10px;
@@ -40,6 +49,226 @@ h1 {
 
 /* Exercise 02 - Flexbox */
 
+/*Header- flexbox centered */
+.top_of_page {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  background-color: #000;
+  color: var(--light-text-color);
+}
+
+.top_of_page h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+/*Navigation- flexbox horizontal layout */
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+.navigation a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navigation a:hover {
+  color: #015b01;
+  text-decoration: underline;
+}
+
+/*Main area- horizontal layout for games aswell */
+.main_area {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/*Game sections - flexbox column layout (vertical) */
+.page_area {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.page_area h2 {
+  margin-top: 0;
+  color: #000;
+}
+
+.page_area figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.page_area img {
+  max-width: 300px;
+  height: auto;
+}
+
+.bottom_of_page {
+  background-color: #000;
+  color: var(--light-text-color);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+
 /* Exercise 03 - CSS Grid */
 
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto repeat(4, minmax(120px, auto)) auto;
+  gap: 10px;
+  width: min(1024px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.grid_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.75rem;
+  background-color: var(--purple);
+  color: var(--light-text-color);
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+.item1,
+.item8 {
+  grid-column: 1 / 7;
+}
+
+.item2 {
+  grid-column: 1 / 5;
+  grid-row: 2 / 6;
+}
+
+.item3 {
+  grid-column: 5 / 7;
+  grid-row: 2 / 6;
+}
+
+.item4,
+.item5 {
+  grid-column: span 2;
+}
+
+.item6 {
+  display: none;
+}
+
+.item7 {
+  grid-column: 1 / 3;
+  grid-row: 6 / 7;
+}
+
 /* Exercise 04 - CSS Grid Areas */
+
+/*Mobile layout- single column stack */
+.grid_area_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "header"
+    "article"
+    "section"
+    "aside"
+    "footer";
+  gap: 10px;
+  padding: 1rem;
+}
+
+/*Shared styling for grid */
+.grid_area_container .grid_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--purple);
+  color: var(--light-text-color);
+  font-size: 1.75rem;
+  text-transform: uppercase;
+}
+
+/* Assign each semantic element to a grid area */
+.header {
+  grid-area: header;
+}
+
+.article {
+  grid-area: article;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.section {
+  grid-area: section;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* Tablet - 768 pixels*/
+@media (min-width: 768px) {
+  .grid_area_container {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "article aside"
+      "section section"
+      "footer footer";
+  }
+}
+
+/*Laptop- 1024 pixels*/
+@media (min-width: 1024px) {
+  .grid_area_container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "aside article"
+      "section section"
+      "footer footer";
+  }
+}
+
+/* Desktop - 1440 pixels*/
+@media (min-width: 1440px) {
+  .grid_area_container {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "aside article"
+      "section section"
+      "footer footer";
+  }
+}
