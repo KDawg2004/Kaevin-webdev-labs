@@ -40,7 +40,7 @@ const sortPokemons = function logSortedPokemons(sortType) {
 
   } else if (sortType === 'alphabetically, in descending order') {
     //sort by name from z to a
-    sorted = pokemons.sort((a, b) => a.name < b.name ? 1 : -1));
+    sorted = pokemons.sort((a, b) => a.name < b.name ? 1 : -1);
 
   } else {
     console.log('invalid sort type');
