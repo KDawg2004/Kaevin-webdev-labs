@@ -21,7 +21,11 @@ const pokemons = [
   { id: 20, name: 'Raticate', types: ['Normal'] },
 ];
 
-// Add your code here for: forEachPokemon
+const forEachPokemon = function() {
+  pokemons.forEach((pokemon, index) => {
+    console.log(`#${index + 1} ${pokemon.name} - ${pokemon.types.join(' / ')}`);
+  });
+};
 
 console.group('=========== forEachPokemon =========== ');
 console.log(forEachPokemon());
@@ -48,6 +52,15 @@ console.log(forEachPokemon());
 console.groupEnd();
 
 // Add your code here for: filterPokemons
+// Use the function expression filterPokemons to return an array of all the Pokémons of that type. 
+// The array should be sorted in alphabetical order. 
+// Use the array methods filter(), sort(), and map(). The output should be formatted as shown below.
+const filterPokemons = function(filterType) {
+  return pokemons
+    .filter(pokemon => pokemon.types.includes(filterType))
+    .map(pokemon => pokemon.name)
+    .sort();
+};
 
 console.group('=========== filterPokemons =========== ');
 console.log(filterPokemons('Fire'));
@@ -59,6 +72,15 @@ console.log(filterPokemons('Poison'));
 console.groupEnd();
 
 // Add your code here for: searchPokemons
+//Use the function expression searchPokemons to search based on the name of the Pokémon or its type. 
+//Use the array methods filter() and includes(). The search should be case-insensitive.
+const searchPokemons = function(searchWord) {
+  return pokemons.filter(pokemon => {
+    const lowerName = pokemon.name.toLowerCase();
+    const lowerTypes = pokemon.types.map(type => type.toLowerCase());
+    return lowerName.includes(searchWord.toLowerCase()) || lowerTypes.includes(searchWord.toLowerCase());
+  });
+};
 
 console.group('=========== searchPokemons =========== ');
 console.log(searchPokemons('Wartortle'));
@@ -77,6 +99,19 @@ console.log(searchPokemons('bug'));
 console.groupEnd();
 
 // Add your code here for: reducePokemons
+// Use the function expression reducePokemons to return an object with the number of Pokémons of each type. 
+// Use the array method reduce().
+const reducePokemons = pokemons.reduce((acc, pokemon) => {
+  //each pokemon has multiple types
+  pokemon.types.forEach(type => {
+    //check if it alreaady exists, if not use 0, then add 1 to count this one
+    acc[type] = (acc[type] || 0) + 1;
+  });
+  //return the updated obj
+  return acc;
+
+  //where acc starts as an empty object
+}, {});
 
 console.group('=========== reducePokemons =========== ');
 console.log(reducePokemons);

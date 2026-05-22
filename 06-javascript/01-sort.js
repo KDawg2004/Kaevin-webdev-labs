@@ -23,7 +23,32 @@ const pokemons = [
 
 const sortPokemons = function logSortedPokemons(sortType) {
   const sortedPokemons = [];
-  // Add your code here
+  let sorted = [];
+  
+  // check what type of sort 
+  if (sortType === 'numerically, in ascending order') {
+    //lowest to highest
+    sorted = pokemons.sort((a, b) => a.id - b.id);
+
+  } else if (sortType === 'numerically, in descending order') {
+    //id from highest to lowest
+    sorted = pokemons.sort((a, b) => b.id - a.id);
+
+  } else if (sortType === 'alphabetically, in ascending order') {
+    //swaps them depending if the first name is greater than the second
+    sorted = pokemons.sort((a, b) => a.name > b.name ? 1 : -1);
+
+  } else if (sortType === 'alphabetically, in descending order') {
+    //sort by name from z to a
+    sorted = pokemons.sort((a, b) => a.name < b.name ? 1 : -1));
+
+  } else {
+    console.log('invalid sort type');
+  }
+
+  for (let i = 0; i < sorted.length; i++) {
+    sortedPokemons.push(sorted[i]);
+  }
 
   return sortedPokemons;
 };
