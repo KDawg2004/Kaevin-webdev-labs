@@ -24,6 +24,7 @@ const server = http.createServer((req, res) => {
     });
 
     req.on('end', () => {
+      // parse from data and get name and email
       const userdata = querystring.parse(body);
       const { usernameInput: name, emailInput: email } = userdata;
 
